@@ -4,4 +4,4 @@ Disallow: /*.png
 Disallow: /*.jpg
 Disallow: /*.svg
 
-Sitemap: https://technicalseo.com/sitemap.xml
+Sitemap: https://p-o.design/sitemap.xml
