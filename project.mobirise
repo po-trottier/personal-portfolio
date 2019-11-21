@@ -51,12 +51,12 @@
     "robotsText": "User-agent: *\n\nDisallow: /*.png\nDisallow: /*.jpg\nDisallow: /*.svg\n\nSitemap: https://technicalseo.com/sitemap.xml",
     "sitemapSwitcher": true,
     "siteUrl": "http://p-o.design",
-    "sitemapSwitcherAuto": "on",
+    "sitemapSwitcherAuto": false,
     "PWA": {
       "enabled": true,
-      "name": "",
+      "name": "Pierre-Olivier Trottier",
       "icon": "@ADDONS_PATH@/pwa-builder/assets/icons/512x512.png",
-      "themeColor": "#0072ce"
+      "themeColor": "#0c0b18"
     },
     "favicon": false,
     "cookiesAlert": false,
@@ -67,7 +67,7 @@
     "publishType": "local",
     "publishPath": "@PROJECT_PATH@public",
     "screenshot": "screenshot.png",
-    "canonical-url": false,
+    "canonical-url": "https://p-o.design/",
     "google-analytics": ""
   },
   "pages": {
