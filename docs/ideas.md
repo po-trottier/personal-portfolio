@@ -39,7 +39,6 @@ Cool Splash Screen
 https://dribbble.com/shots/5515695-Holographic-Interactions
 https://tympanus.net/codrops/2018/12/06/interactive-repulsion-effect-with-three-js/
 
-
 # Idea
 
 Website #1 but change splash for cool splash screen & add cool loading anim as well as scroll anim
