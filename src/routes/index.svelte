@@ -3,7 +3,8 @@
 </script>
 
 <script lang="ts">
-	// import Counter from '$lib/Counter/index.svelte';
+	import { Button } from 'attractions';
+	import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte'
 </script>
 
 <svelte:head>
@@ -11,8 +12,16 @@
 </svelte:head>
 
 <section>
-	<h1>SvelteKit app</h1>
+	<h1>Hello</h1>
+	<h3>Welcome to my portfolio</h3>
+	<Button round class='icon'><DiGithubBadge /></Button>
+	<div class='separator' />
 </section>
 
-<style>
+<style lang='scss'>
+  @use 'variables.scss';
+
+  h1 {
+    color: variables.$blue;
+  }
 </style>
