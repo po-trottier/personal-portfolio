@@ -10,10 +10,10 @@ const config = {
 	preprocess: sveltePreprocess({
 		scss: {
 			importer: makeAttractionsImporter({
-				themeFile: path.join(path.resolve(), 'src/lib/styles/theme.scss'),
+				themeFile: path.join(path.resolve(), 'src/lib/styles/theme.scss')
 			}),
-			includePaths: [path.join(path.resolve(), 'src/lib/styles')],
-		},
+			includePaths: [path.join(path.resolve(), 'src/lib/styles')]
+		}
 	})
 };
 

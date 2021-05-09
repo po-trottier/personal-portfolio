@@ -1,19 +1,27 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { getStores } from '$app/stores';
 	import PageLoadingBar from 'sapper-page-loading-bar/PageLoadingBar.svelte';
 
+	import { getStores } from '$app/stores';
+	import Header from '$lib/components/header.svelte';
+	import Footer from '$lib/components/footer.svelte';
+
 	import '$lib/styles/global.scss';
+	import '$lib/styles/styles.scss';
 
 	const { navigating } = getStores();
 </script>
 
-<PageLoadingBar {navigating} />
+<PageLoadingBar preloading={navigating} color1="#00D1FF" color2="#00FF94" />
 
 {#if !$navigating}
+	<Header />
+
 	<main transition:fade>
 		<slot />
 	</main>
+
+	<Footer />
 {/if}
 
 <style>

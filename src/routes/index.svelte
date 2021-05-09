@@ -3,25 +3,19 @@
 </script>
 
 <script lang="ts">
-	import { Button } from 'attractions';
-	import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte'
+	import Hero from '$lib/components/hero/hero.svelte';
+	import About from '$lib/components/about/about.svelte';
+	import Skills from '$lib/components/skills/skills.svelte';
+	import Projects from '$lib/components/projects/projects.svelte';
+	import Contact from '$lib/components/contact/contact.svelte';
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Software Engineer, Graphic Design & Music Producer | Pierre-Olivier Trottier</title>
 </svelte:head>
 
-<section>
-	<h1>Hello</h1>
-	<h3>Welcome to my portfolio</h3>
-	<Button round class='icon'><DiGithubBadge /></Button>
-	<div class='separator' />
-</section>
-
-<style lang='scss'>
-  @use 'variables.scss';
-
-  h1 {
-    color: variables.$blue;
-  }
-</style>
+<Hero />
+<About />
+<Skills />
+<Projects />
+<Contact />
