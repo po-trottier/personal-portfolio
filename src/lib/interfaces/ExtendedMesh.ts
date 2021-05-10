@@ -1,6 +1,6 @@
-import type { Mesh } from 'three';
+import type * as THREE from 'three';
 
-export interface ExtendedMesh extends Mesh {
+export interface ExtendedMesh extends THREE.Mesh {
 	initialRotation?: {
 		x: number;
 		y: number;

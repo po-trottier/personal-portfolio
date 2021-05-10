@@ -1,7 +1,7 @@
-import type { BufferGeometry } from 'three';
+import type * as THREE from 'three';
 
 export class Geometry {
-	geometry: BufferGeometry;
+	geometry: THREE.BufferGeometry;
 	rotationX: number;
 	rotationY: number;
 	rotationZ: number;

@@ -1,21 +1,5 @@
-import {
-	AmbientLight,
-	Mesh,
-	MeshPhysicalMaterial,
-	Object3D,
-	PCFSoftShadowMap,
-	PerspectiveCamera,
-	PlaneGeometry,
-	PointLight,
-	Raycaster,
-	RectAreaLight,
-	Scene,
-	ShadowMaterial,
-	SpotLight,
-	Vector2,
-	WebGLRenderer
-} from 'three';
-import { TweenMax, Expo } from 'gsap';
+import * as THREE from 'three';
+import * as gsap from 'gsap';
 import { Cone } from '$lib/geometry/cone';
 import { Torus } from '$lib/geometry/torus';
 import { Box } from '$lib/geometry/box';
@@ -29,20 +13,20 @@ export class OverlayScene {
 
 	private element: HTMLCanvasElement;
 
-	private renderer: WebGLRenderer;
-	private scene: Scene;
-	private camera: PerspectiveCamera;
+	private renderer: THREE.WebGLRenderer;
+	private scene: THREE.Scene;
+	private camera: THREE.PerspectiveCamera;
 
 	private gutter: { size: number };
 	private grid: { rows: number; cols: number };
 	private meshes: ExtendedMesh[][];
 	private width: number;
 	private height: number;
-	private mouse3D: Vector2;
+	private mouse3D: THREE.Vector2;
 	private geometries: Geometry[];
-	private raycaster: Raycaster;
-	private floor: Mesh;
-	private groupMesh: Object3D;
+	private raycaster: THREE.Raycaster;
+	private floor: THREE.Object3D;
+	private groupMesh: THREE.Object3D;
 
 	constructor(element: HTMLCanvasElement) {
 		this.element = element;
@@ -91,25 +75,25 @@ export class OverlayScene {
 			rows: Math.max(Math.floor(this.height / OverlayScene.ROW_RATIO), 10),
 			cols: Math.max(Math.floor(this.width / OverlayScene.COL_RATIO), 6)
 		};
-		this.mouse3D = new Vector2();
-		this.raycaster = new Raycaster();
+		this.mouse3D = new THREE.Vector2();
+		this.raycaster = new THREE.Raycaster();
 		this.geometries = [new Box(), new Cone(), new Torus()];
 	}
 
 	private createScene(): void {
-		this.scene = new Scene();
+		this.scene = new THREE.Scene();
 
-		this.renderer = new WebGLRenderer({ antialias: true, alpha: true });
+		this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 		this.renderer.setSize(this.width, this.height);
 		this.renderer.setPixelRatio(window.devicePixelRatio);
 
 		this.renderer.shadowMap.enabled = true;
-		this.renderer.shadowMap.type = PCFSoftShadowMap;
+		this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 		this.element.appendChild(this.renderer.domElement);
 	}
 
 	private createCamera(): void {
-		this.camera = new PerspectiveCamera(20, this.width / this.height, 1);
+		this.camera = new THREE.PerspectiveCamera(20, this.width / this.height, 1);
 		this.camera.position.set(0, 65, 0);
 		this.camera.rotation.x = -1.57;
 
@@ -117,13 +101,13 @@ export class OverlayScene {
 	}
 
 	private addAmbientLight(): void {
-		const light = new AmbientLight('#ffffff', 1);
+		const light = new THREE.AmbientLight('#ffffff', 1);
 
 		this.scene.add(light);
 	}
 
 	private addSpotLight(): void {
-		const light = new SpotLight('#7b80d7', 1, 1000);
+		const light = new THREE.SpotLight('#7b80d7', 1, 1000);
 
 		light.position.set(0, 27, 0);
 		light.castShadow = true;
@@ -132,7 +116,7 @@ export class OverlayScene {
 	}
 
 	private addRectLight(): void {
-		const light = new RectAreaLight('#121334', 1, 2000, 2000);
+		const light = new THREE.RectAreaLight('#121334', 1, 2000, 2000);
 
 		light.position.set(5, 50, 50);
 		light.lookAt(0, 0, 0);
@@ -141,7 +125,7 @@ export class OverlayScene {
 	}
 
 	private addPointLight(color, position): void {
-		const light = new PointLight(color, 1, 1000, 1);
+		const light = new THREE.PointLight(color, 1, 1000, 1);
 
 		light.position.set(position.x, position.y, position.z);
 
@@ -149,10 +133,10 @@ export class OverlayScene {
 	}
 
 	private addFloor(): void {
-		const geometry = new PlaneGeometry(100, 100);
-		const material = new ShadowMaterial({ opacity: 0.3 });
+		const geometry = new THREE.PlaneGeometry(100, 100);
+		const material = new THREE.ShadowMaterial({ opacity: 0.3 });
 
-		this.floor = new Mesh(geometry, material);
+		this.floor = new THREE.Mesh(geometry, material);
 		this.floor.position.y = 0;
 		this.floor.receiveShadow = true;
 		this.floor.rotateX(-Math.PI / 2);
@@ -175,9 +159,9 @@ export class OverlayScene {
 		// Clear previous grid
 		this.scene.remove(this.groupMesh);
 
-		this.groupMesh = new Object3D();
+		this.groupMesh = new THREE.Object3D();
 
-		const material = new MeshPhysicalMaterial({
+		const material = new THREE.MeshPhysicalMaterial({
 			color: '#1e1e40',
 			metalness: 0.58,
 			emissive: '#000000',
@@ -245,19 +229,19 @@ export class OverlayScene {
 						);
 
 						const y = map(mouseDistance, 6, 0, 0, 6);
-						TweenMax.to(mesh.position, 0.3, { y: y < 1 ? 1 : y });
+						gsap.TweenMax.to(mesh.position, 0.3, { y: y < 1 ? 1 : y });
 
 						const scaleFactor = mesh.position.y / 1.5;
 						const scale = scaleFactor < 1 ? 1 : scaleFactor;
-						TweenMax.to(mesh.scale, 0.3, {
-							ease: Expo.easeOut,
+						gsap.TweenMax.to(mesh.scale, 0.3, {
+							ease: "expo.easeOut",
 							x: scale,
 							y: scale,
 							z: scale
 						});
 
-						TweenMax.to(mesh.rotation, 0.7, {
-							ease: Expo.easeOut,
+						gsap.TweenMax.to(mesh.rotation, 0.7, {
+							ease: "expo.easeOut",
 							x: map(mesh.position.y, -1, 1, radians(180), mesh.initialRotation.x),
 							z: map(mesh.position.y, -1, 1, radians(90), mesh.initialRotation.z),
 							y: map(mesh.position.y, -1, 1, radians(90), mesh.initialRotation.y)
@@ -291,7 +275,7 @@ export class OverlayScene {
 	// Static Methods
 
 	private static getMesh(geometry, material): ExtendedMesh {
-		const mesh = new Mesh(geometry, material);
+		const mesh = new THREE.Mesh(geometry, material);
 		mesh.castShadow = true;
 		mesh.receiveShadow = true;
 		return mesh;
