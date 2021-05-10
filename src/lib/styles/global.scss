@@ -5,6 +5,10 @@
 	transition: all 0.3s ease;
 }
 
+* :not(a, button, img) {
+	cursor: url('../assets/cursor.png') 8 8, auto;
+}
+
 html {
 	scroll-behavior: smooth;
 }
