@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Button } from 'attractions';
+
 	import logo from '$lib/assets/logo.svg';
 	import hamburger from '$lib/assets/hamburger.svg';
 
@@ -11,7 +12,7 @@
 		if (width <= 768) {
 			opened = false;
 		}
-	}
+	};
 
 	let toggleMenu = () => {
 		opened = !opened;
@@ -20,7 +21,7 @@
 		} else {
 			console.log('Mobile', opened);
 		}
-	}
+	};
 </script>
 
 <svelte:window bind:scrollY={y} bind:innerWidth={width} on:resize={onResize} />

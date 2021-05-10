@@ -1,10 +1,13 @@
 <script lang="ts">
+	import Overlay from './overlay.svelte';
+
 	import hello from '$lib/assets/hello.svg';
 	import portfolio from '$lib/assets/portfolio.svg';
 	import scroll from '$lib/assets/scroll.svg';
 </script>
 
 <section id="hero">
+	<Overlay />
 	<div class="hero-image">
 		<img src={hello} alt="Hello" draggable="false" />
 		<div class="separator white spaced" />

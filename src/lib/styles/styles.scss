@@ -34,11 +34,29 @@
 	justify-content: space-evenly;
 	writing-mode: vertical-rl;
 	padding: 96px 48px;
+	margin-right: 16px;
 	transform: rotate(180deg);
 }
 
+.overlay-wrapper {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.overlay-vignette {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: radial-gradient(transparent, transparent 50%, $darker 75%, $darker);
+}
+
 .animated {
-	animation: alternate 2s infinite ease movement;
+	animation: alternate 1.5s infinite ease movement;
 }
 
 .header {
