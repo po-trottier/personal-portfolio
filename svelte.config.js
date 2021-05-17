@@ -6,7 +6,13 @@ import makeAttractionsImporter from 'attractions/importer.js';
 const config = {
 	kit: {
 		adapter: adapter(),
-		target: '#svelte'
+		target: '#svelte',
+		prerender: {
+			crawl: true,
+			enabled: true,
+			force: true,
+			pages: ['*'],
+		},
 	},
 
 	preprocess: preprocess({
