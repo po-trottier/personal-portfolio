@@ -2,11 +2,8 @@
 @import 'variables';
 
 * {
-	transition: all 0.3s ease;
-}
-
-* :not(a, button, img) {
-	cursor: url('../assets/cursor.png') 8 8, auto;
+	font-family: 'Barlow', sans-serif;
+	transition: all 0.3s ease, color 0s;
 }
 
 html {
@@ -29,31 +26,8 @@ h6 {
 	margin: 0;
 }
 
-nav ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: row;
-}
-
-nav ul li {
-	margin: 0 4px;
-}
-
-nav ul li a {
+nav ul li a button {
 	text-transform: uppercase;
 	font-weight: bold !important;
 	opacity: 85%;
-}
-
-#svelte {
-	min-height: 100vh;
-	font-family: 'Barlow', sans-serif;
-}
-
-@media only screen and (max-width: $tablet) {
-	.desktop {
-		display: none !important;
-	}
 }

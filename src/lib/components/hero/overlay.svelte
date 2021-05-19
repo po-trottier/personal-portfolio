@@ -11,8 +11,8 @@
 	});
 </script>
 
-<div bind:this={wrapper} class="overlay-wrapper" />
-<div class="overlay-vignette" />
+<div bind:this={wrapper} class="absolute inset-0" />
+<div class="vignette absolute inset-0" />
 
 <style>
 </style>

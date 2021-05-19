@@ -1,134 +1,41 @@
 @import 'variables';
 
+// ID Styling
+
+#svelte {
+	min-height: 100vh;
+}
+
 #hero {
-	position: relative;
-	height: 100vh;
 	background: radial-gradient($dark, $darker);
 }
 
-.hero-image {
+#hero :not(a, button, img) {
+	cursor: url('../assets/cursor.png') 8 8, auto;
+}
+
+#hero-vertical {
+	justify-content: space-evenly;
+	writing-mode: vertical-rl;
+	padding: 96px 48px;
+	transform: rotate(180deg);
+}
+
+// Sharable Classes
+
+.inset-center {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	max-width: 50vw;
 }
 
-.hero-scroll {
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	text-align: center;
-	margin-bottom: 48px;
-}
-
-.hero-vertical {
-	position: absolute;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	display: flex;
-	flex-direction: row;
-	opacity: 75%;
-	justify-content: space-evenly;
-	writing-mode: vertical-rl;
-	padding: 96px 48px;
-	margin-right: 16px;
-	transform: rotate(180deg);
-}
-
-.overlay-wrapper {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
-.overlay-vignette {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+.vignette {
 	background: radial-gradient(transparent, transparent 50%, $darker 75%, $darker);
 }
 
-.animated {
-	animation: alternate 1.5s infinite ease movement;
-}
-
-.header {
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 999;
-	position: fixed;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin: 16px 16px;
-	padding: 8px 32px;
-	height: 48px;
-	border-radius: 64px;
-	border: 2px solid transparent;
-}
-
-.colored {
-	background-color: rgba($darker, 0.95);
-	border-color: $light;
-}
-
-.logo {
-	width: 64px;
-	height: 100%;
-	margin-right: 32px;
-}
-
-.hamburger {
-	margin-left: auto;
-	border-radius: 50%;
-}
-
-.hamburger img {
-	height: 16px;
-	margin-left: -2px;
-}
-
-.fab {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	margin: 64px;
-}
-
-.icon {
-	width: 48px;
-	height: 48px;
-	border-radius: 50% !important;
-	padding: 4px !important;
-	color: $blue !important;
-}
-
-.large {
-	width: 64px;
-	height: 64px;
-}
-
-.separator {
-	height: 8px;
-}
-
-.bottom {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
-.spaced {
-	margin: 12px 0 16px 0;
+.bounce-up {
+	animation: alternate 1.5s infinite ease bounce;
 }
 
 .rainbow {
@@ -189,10 +96,7 @@
 	animation: forwards 5s infinite linear gradient;
 }
 
-.white {
-	opacity: 0.75;
-	background-color: white;
-}
+// Animations
 
 @keyframes gradient {
 	0% {
@@ -203,11 +107,18 @@
 	}
 }
 
-@keyframes movement {
+@keyframes bounce {
 	0% {
 		transform: translateY(0);
 	}
 	100% {
 		transform: translateY(8px);
 	}
+}
+
+// Component-Specific Classes
+
+.colored-header {
+	background-color: rgba($darker, 0.95) !important;
+	border-color: $light !important;
 }

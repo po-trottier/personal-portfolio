@@ -234,14 +234,14 @@ export class OverlayScene {
 						const scaleFactor = mesh.position.y / 1.5;
 						const scale = scaleFactor < 1 ? 1 : scaleFactor;
 						gsap.TweenMax.to(mesh.scale, 0.3, {
-							ease: "expo.easeOut",
+							ease: 'expo.easeOut',
 							x: scale,
 							y: scale,
 							z: scale
 						});
 
 						gsap.TweenMax.to(mesh.rotation, 0.7, {
-							ease: "expo.easeOut",
+							ease: 'expo.easeOut',
 							x: map(mesh.position.y, -1, 1, radians(180), mesh.initialRotation.x),
 							z: map(mesh.position.y, -1, 1, radians(90), mesh.initialRotation.z),
 							y: map(mesh.position.y, -1, 1, radians(90), mesh.initialRotation.y)

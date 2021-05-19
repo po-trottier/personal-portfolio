@@ -1,9 +1,12 @@
-import path from 'path';
-import adapter from '@sveltejs/adapter-netlify';
 import preprocess from 'svelte-preprocess';
-import makeAttractionsImporter from 'attractions/importer.js';
+import adapter from '@sveltejs/adapter-netlify';
 
 const config = {
+	preprocess: [
+		preprocess({
+			postcss: true
+		})
+	],
 	kit: {
 		adapter: adapter(),
 		target: '#svelte',
@@ -11,18 +14,9 @@ const config = {
 			crawl: true,
 			enabled: true,
 			force: true,
-			pages: ['*'],
-		},
-	},
-
-	preprocess: preprocess({
-		scss: {
-			importer: makeAttractionsImporter({
-				themeFile: path.join(path.resolve(), 'src/lib/styles/theme.scss')
-			}),
-			includePaths: [path.join(path.resolve(), 'src/lib/styles')]
+			pages: ['*']
 		}
-	})
+	}
 };
 
 export default config;

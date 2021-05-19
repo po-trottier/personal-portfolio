@@ -6,23 +6,25 @@
 	import scroll from '$lib/assets/scroll.svg';
 </script>
 
-<section id="hero">
+<section id="hero" class="min-h-screen relative">
 	<Overlay />
-	<div class="hero-image">
+	<div class="absolute inset-center" style="max-width: 50vw;">
 		<img src={hello} alt="Hello" draggable="false" />
-		<div class="separator white spaced" />
+		<div class="h-2 my-4 bg-white opacity-75" />
 		<img src={portfolio} alt="Welcome to my Portfolio" draggable="false" width="100%" />
 	</div>
-	<div class="hero-vertical desktop">
+	<div
+		id="hero-vertical"
+		class="absolute flex-row opacity-75 inset-y-0 right-0 mr-2 hidden md:flex">
 		<h3>Software Engineer</h3>
 		<h3>Graphic Designer</h3>
 		<h3>Music Producer</h3>
 	</div>
-	<div class="hero-scroll">
-		<h3 style="margin-bottom: 8px; opacity: 75%;">Scroll Down</h3>
-		<img src={scroll} alt="Scroll Down" draggable="false" height="24" class="animated" />
+	<div class="absolute bottom-0 inset-x-0 text-center mb-10">
+		<h3 class="mb-2 opacity-75 font-bold">Scroll Down</h3>
+		<img src={scroll} alt="Scroll Down" draggable="false" height="24" class="mx-auto bounce-up" />
 	</div>
-	<div class="separator rainbow bottom" />
+	<div class="h-2 absolute inset-x-0 bottom-0 rainbow" />
 </section>
 
 <style lang="scss">

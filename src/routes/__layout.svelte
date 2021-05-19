@@ -9,10 +9,13 @@
 	import '$lib/styles/global.scss';
 	import '$lib/styles/styles.scss';
 
+	import Tailwind from '$lib/components/tailwind.svelte';
+
 	const { navigating } = getStores();
 </script>
 
 <PageLoadingBar preloading={navigating} color1="#00D1FF" color2="#00FF94" />
+<Tailwind />
 
 {#if !$navigating}
 	<Header />
