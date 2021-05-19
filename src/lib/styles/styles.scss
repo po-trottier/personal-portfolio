@@ -6,6 +6,10 @@
 	min-height: 100vh;
 }
 
+#header {
+	border-color: transparent;
+}
+
 #hero {
 	background: radial-gradient($dark, $darker);
 }

@@ -15,7 +15,8 @@
 	</div>
 	<div
 		id="hero-vertical"
-		class="absolute flex-row opacity-75 inset-y-0 right-0 mr-2 hidden md:flex">
+		class="absolute flex-row opacity-75 inset-y-0 right-0 mr-2 hidden md:flex"
+	>
 		<h3>Software Engineer</h3>
 		<h3>Graphic Designer</h3>
 		<h3>Music Producer</h3>

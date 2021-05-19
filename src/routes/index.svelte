@@ -8,6 +8,7 @@
 	import Skills from '$lib/components/skills/skills.svelte';
 	import Projects from '$lib/components/projects/projects.svelte';
 	import Contact from '$lib/components/contact/contact.svelte';
+	import Footer from '$lib/components/footer.svelte';
 </script>
 
 <svelte:head>
@@ -19,3 +20,4 @@
 <Skills />
 <Projects />
 <Contact />
+<Footer />
