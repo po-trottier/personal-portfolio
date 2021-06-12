@@ -15,11 +15,10 @@
 	</div>
 	<div
 		id="hero-vertical"
-		class="absolute flex-row opacity-75 inset-y-0 right-0 mr-2 hidden md:flex"
-	>
-		<h3>Software Engineer</h3>
-		<h3>Graphic Designer</h3>
-		<h3>Music Producer</h3>
+		class="absolute flex-row opacity-75 inset-y-0 right-0 mr-2 hidden md:flex">
+		<h3 class='text-xl font-bold'>Software Engineer</h3>
+		<h3 class='text-xl font-bold'>Graphic Designer</h3>
+		<h3 class='text-xl font-bold'>Music Producer</h3>
 	</div>
 	<div class="absolute bottom-0 inset-x-0 text-center mb-10">
 		<h3 class="mb-2 opacity-75 font-bold">Scroll Down</h3>
