@@ -5,8 +5,8 @@
 </script>
 
 <div on:click={callback} class='fixed inset-0 h-screen bg-darker bg-opacity-75 flex items-center justify-center'>
-	<form on:click|stopPropagation="" class='inset-0 mx-6 max-w-xl rounded-lg border-2 p-6 colored-borders' name="bug" method="post" netlify netlify-honeypot="bot-field">
-		<input type="hidden" name="form-name" value="test" />
+	<form on:click|stopPropagation="" name="bug" method="post" netlify netlify-honeypot="bot-field" class='inset-0 mx-6 max-w-xl rounded-lg border-2 p-6 colored-borders'>
+		<input type="hidden" name="form-name" value="bug" />
 		<input type="hidden" name="bot-field" />
 		<div class='flex mb-4 items-center'>
 			<p><b>I apologise for the inconvenience.</b> Please describe the issue you are facing and I will fix it as soon as possible.</p>

@@ -6,7 +6,7 @@
 	<div class="h-2 absolute inset-x-0 top-0 rainbow" />
 	<SectionTitle number={4} title='Contact Me' color='#00FF94'/>
 	<form name="contact" method="post" netlify netlify-honeypot="bot-field" class='flex flex-col'>
-		<input type="hidden" name="form-name" value="test" />
+		<input type="hidden" name="form-name" value="contact" />
 		<input type="hidden" name="bot-field" />
 
 		<label for='name' class='mb-2'>Enter your full name:</label>
