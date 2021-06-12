@@ -3,13 +3,9 @@
 	export let callback;
 </script>
 
-<button
-	on:click={callback}
-	class='fixed top-0 right-0 m-16 py-1 px-2 border border-white rounded-lg'>
-	<span class='flex align-center uppercase'>
-		Close
-		<span class='ml-1 w-6 h-6 text-yellow'>
-			<MdClose />
-		</span>
-	</span>
-</button>
+<div class='fixed cursor-pointer flex items-center top-0 right-0 m-16' on:click|preventDefault={callback}>
+	<span>Close</span>
+	<button class='ml-2 w-8 h-8 p-2 rounded-full bg-light hover:bg-lighter'>
+		<MdClose />
+	</button>
+</div>

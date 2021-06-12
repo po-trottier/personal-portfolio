@@ -18,7 +18,6 @@
 
 {#if !$navigating}
 	<Header />
-
 	<main transition:fade>
 		<slot />
 	</main>

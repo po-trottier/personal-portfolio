@@ -1,6 +1,7 @@
 <script lang="ts">
 	import IoIosDocument from 'svelte-icons/io/IoIosDocument.svelte'
 	import MdBugReport from 'svelte-icons/md/MdBugReport.svelte'
+	import MdCode from 'svelte-icons/md/MdCode.svelte'
 
 	export let resumeCallback;
 	export let bugCallback;
@@ -10,6 +11,11 @@
 			icon: IoIosDocument,
 			text: 'View My Resume',
 			action: () => { resumeCallback(); }
+		},
+		{
+			icon: MdCode,
+			text: 'View Source Code',
+			url: "https://github.com/po-trottier/website-personal-portfolio"
 		},
 		{
 			icon: MdBugReport,
@@ -23,14 +29,25 @@
 	<ul>
 		{#each sections as section}
 			<li>
-				<button on:click={section.action} class='p-1 my-1'>
-					<span class='flex align-center'>
-						<span class='mr-2 w-6 h-6'>
-							<svelte:component this={section.icon} />
+				{#if section.url}
+					<a href={section.url} target='_blank' class='p-1 my-1'>
+						<span class='flex align-center'>
+							<span class='mr-2 w-6 h-6'>
+								<svelte:component this={section.icon} />
+							</span>
+							{section.text}
 						</span>
-						{section.text}
-					</span>
-				</button>
+					</a>
+				{:else}
+					<button on:click={section.action} class='p-1 my-1'>
+						<span class='flex align-center'>
+							<span class='mr-2 w-6 h-6'>
+								<svelte:component this={section.icon} />
+							</span>
+							{section.text}
+						</span>
+					</button>
+				{/if}
 			</li>
 		{/each}
 	</ul>

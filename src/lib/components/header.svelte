@@ -15,8 +15,8 @@
 
 <header
 	id="header"
-	class="border-2 inset-x-0 top-0 fixed flex rounded-full items-center z-40 m-4 px-8 py-2"
-	class:colored-header={y > 0}>
+	class="cursor-default border-2 inset-x-0 top-0 fixed flex rounded-full items-center z-40 m-4 px-8 py-2"
+	class:colored-borders={y > 0}>
 	<nav class="flex">
 		<a href="/#">
 			<img draggable="false" src={logo} alt="Brand Logo" class="h-full w-16 mr-8" />

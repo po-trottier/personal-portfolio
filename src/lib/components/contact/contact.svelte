@@ -3,7 +3,7 @@
 
 <section id="contact" style="height: 600px;">
 	<h1>Contact</h1>
-	<form name="test" method="post" netlify netlify-honeypot="bot-field">
+	<form name="contact" method="post" netlify netlify-honeypot="bot-field">
 		<input type="hidden" name="form-name" value="test" />
 		<input type="hidden" name="bot-field" />
 		<p>
