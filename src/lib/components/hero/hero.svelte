@@ -22,7 +22,7 @@
 	</div>
 	<div class="absolute bottom-0 inset-x-0 text-center mb-10">
 		<h3 class="mb-2 opacity-75 font-bold">Scroll Down</h3>
-		<img src={scroll} alt="Scroll Down" draggable="false" height="24" class="mx-auto bounce-up" />
+		<img src={scroll} alt="Scroll Down" draggable="false" height="24" class="mx-auto animate-bounce" />
 	</div>
 	<div class="h-2 absolute inset-x-0 bottom-0 rainbow" />
 </section>

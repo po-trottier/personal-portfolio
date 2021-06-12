@@ -38,10 +38,6 @@
 	background: radial-gradient(transparent, transparent 50%, $darker 75%, $darker);
 }
 
-.bounce-up {
-	animation: alternate 1.5s infinite ease bounce;
-}
-
 .rainbow {
 	background: $blue;
 	background: -webkit-linear-gradient(
@@ -108,15 +104,6 @@
 	}
 	100% {
 		background-position: 50vw 0;
-	}
-}
-
-@keyframes bounce {
-	0% {
-		transform: translateY(0);
-	}
-	100% {
-		transform: translateY(8px);
 	}
 }
 
