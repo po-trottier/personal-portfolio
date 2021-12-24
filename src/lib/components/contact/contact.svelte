@@ -1,10 +1,11 @@
 <script lang="ts">
-	import SectionTitle from '$lib/components/shared/section_title.svelte'
+	import SectionTitle from '$lib/components/shared/section_title.svelte';
+	import { Colors } from '$lib/styles/variables.ts';
 </script>
 
 <section id="contact" class='bg-darker p-16 shadow-2xl relative'>
 	<div class="h-2 absolute inset-x-0 top-0 rainbow" />
-	<SectionTitle number={4} title='Contact Me' color='#00FF94'/>
+	<SectionTitle number={4} title='Contact Me' color='{Colors.Green}'/>
 	<form name="contact" method="post" netlify netlify-honeypot="bot-field" class='flex flex-col'>
 		<input type="hidden" name="form-name" value="contact" />
 		<input type="hidden" name="bot-field" />

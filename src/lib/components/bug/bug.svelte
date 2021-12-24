@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MdClose from 'svelte-icons/md/MdClose.svelte'
+	import MdClose from 'svelte-icons/md/MdClose.svelte';
 
 	export let callback;
 </script>

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import IoIosDocument from 'svelte-icons/io/IoIosDocument.svelte'
-	import MdBugReport from 'svelte-icons/md/MdBugReport.svelte'
-	import MdCode from 'svelte-icons/md/MdCode.svelte'
+	import IoIosDocument from 'svelte-icons/io/IoIosDocument.svelte';
+	import MdBugReport from 'svelte-icons/md/MdBugReport.svelte';
+	import MdCode from 'svelte-icons/md/MdCode.svelte';
 
 	export let resumeCallback;
 	export let bugCallback;
